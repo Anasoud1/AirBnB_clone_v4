@@ -1,11 +1,11 @@
-$('document').ready(function() {
+$(document).ready(function() {
+    const dict = {};
     $('input[type=checkbox]').change(function() {
-	const dict = {};
 	if ($(this).prop('checked')) {
-		dict[$(this).attr('data-name')] =($(this).attr('data-id'));
+		dict[$(this).attr('data-id')] = $(this).attr('data-name');
 	} else {
-		delete amenityIds[$(this).attr('data-name')];
+		delete dict[$(this).attr('data-id')];
 	}
-		$('div.amenities h4').text(Object.keys(dic).join(',')):
+	$('div.amenities h4').text(Object.values(dict).join(', '));
 	});
 });
